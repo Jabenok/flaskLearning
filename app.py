@@ -33,7 +33,7 @@ def profile(username):
     if 'userLogged' not in session or session['userLogged']!=username:
         abort(401) #если пользователь пытается зайти не на свой профиль
 
-    return f"Пользователь: {username}"
+    return render_template('profile.html', username=username)
 
 
 @app.route("/login", methods=["POST", "GET"])
@@ -48,6 +48,10 @@ def login():
     
     return render_template('login.html', title="Login")
 
+@app.route("/logout")
+def logout():
+    session.pop('userLogged', None)  # Удаляет пользователя из сессии
+    return redirect(url_for('login'))  # Перенаправляет на страницу входа
 
 #Если страница не найдена
 @app.errorhandler(404)

@@ -7,6 +7,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
+
+
+    
     {% block content %}{% endblock %}
+    {% if show_button is not false %}
+    <br><a href="{{ url_for('index') }}" class="button">На главную</a>
+    {%endif%}
 </body>
 </html>
