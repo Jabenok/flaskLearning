@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <a href="{{ url_for('about') }}" class="about">about</a>
+    <br>
+    <a href="{{ url_for('login') }}" class="login">log in</a>
+{% endblock %}

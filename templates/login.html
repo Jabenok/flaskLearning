@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{super()}}
+
+<form action="/login" method="post">
+    Name: <input type="text" name="username" value=""><br>
+    Password: <input type="text" name="password" value=""><br>
+    <input type="submit" value="Submit">
+</form>
+<a href="{{ url_for('index') }}" class="button">На главную</a>
+{% endblock %}
