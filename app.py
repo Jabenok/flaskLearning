@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, flash, session, redirect 
+from flask import Flask, render_template, url_for, request, flash, session, redirect, abort
 
 app = Flask(__name__)
 
@@ -27,13 +27,19 @@ def about():
     
     return render_template('about.html', title="About website")
 
-@app.route("/profile/<path:username>")
+@app.route("/profile/<username>")
 def profile(username):
+
+    if 'userLogged' not in session or session['userLogged']!=username:
+        abort(401) #если пользователь пытается зайти не на свой профиль
+
     return f"Пользователь: {username}"
 
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
+
+    #сохранение сессии если был введен верный пароль
     if 'userLogged' in session:
         return redirect(url_for('profile', username=session['userLogged']))
     elif request.method=='POST' and request.form['username'] == "admin" and request.form["password"]=="admin":

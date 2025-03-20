@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Страница не найдена, вернуться на <a href="{{url_for('index')}}">главную страницу</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="error-container">
+        <h1 class="error-title">Ошибка 404</h1>
+        <p class="error-message">Страница не найдена</p>
+        <p class="error-description">К сожалению, мы не можем найти запрашиваемую вами страницу. Пожалуйста, вернитесь на главную.</p>
+        
+        <!-- Кнопка для возврата на главную -->
+        <a href="{{ url_for('index') }}" class="error-button">На главную</a>
+    </div>
+{% endblock %}

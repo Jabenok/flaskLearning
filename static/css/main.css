@@ -100,3 +100,87 @@ h2.flash {
 }
 
 
+/* Стили для поля комментария */
+textarea {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none; /* Запрещаем изменение размера */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Стиль для текстовых полей, чтобы они были схожи с инпутами */
+textarea:focus {
+    border-color: #008CBA;
+    outline: none;
+}
+/* Стили для описания Flask */
+.flask-description {
+    text-align: left; /* Левое выравнивание текста */
+    max-width: 800px; /* Ограничение ширины блока */
+    margin: 20px auto; /* Центрируем по горизонтали */
+    padding: 20px;
+}
+
+/* Стили для изображений Flask */
+.flask-images {
+    text-align: center; /* Центрируем изображения */
+    margin: 20px 0;
+}
+
+.flask-image {
+    max-width: 300px; /* Ограничение максимальной ширины для изображений */
+    margin: 10px;
+    height: auto; /* Сохраняем пропорции изображения */
+}
+/* Стили для страницы ошибки 404 */
+.error-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f8f8;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-title {
+    font-size: 72px;
+    font-weight: bold;
+    color: #ff6f61; /* Цвет для заголовка */
+}
+
+.error-message {
+    font-size: 36px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.error-description {
+    font-size: 18px;
+    color: #777;
+    margin-top: 10px;
+}
+
+.error-button {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.error-button:hover {
+    background-color: #45a049;
+}
