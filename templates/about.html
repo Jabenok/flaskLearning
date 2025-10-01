@@ -3,9 +3,7 @@
 {% block content %}
     <h1>{{ title }}</h1>
 
-    {% for cat, msg in get_flashed_messages(True) %}
-        <h2 class="flash {{cat}}">{{ msg }}</h2>
-    {% endfor %}
+    
 
     <!-- Описание о Flask -->
     <div class="flask-description">
@@ -26,7 +24,9 @@
     </div>
 
     <!-- Вставка изображений о Flask -->
-    
+    {% for cat, msg in get_flashed_messages(True) %}
+        <h2 class="flash {{cat}}">{{ msg }}</h2>
+    {% endfor %}
 
     <!-- Форма для ввода данных -->
     <form method="post" action="/about">
